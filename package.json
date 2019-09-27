@@ -1,0 +1,18 @@
+{
+  "name": "stonesite",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Daria Davis",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/DariaDavis/stones-site/issues"
+  },
+  "homepage": "https://github.com/DariaDavis/stones-site#readme",
+  "devDependencies": {
+    "node-sass": "^4.12.0"
+  }
+}
