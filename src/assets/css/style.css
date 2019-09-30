@@ -1,36 +1,52 @@
+html{
+    scroll-behavior: smooth;
+}
 body {
     background-color: #f9f9fa;  
     background-size: cover;
     background-position: center; 
-    margin: 0; 
+    margin: 0;     
     font-family: 'verdana';
     
 }
-h1, h2, h3 {    
+h1, h2, h3 {        
+ margin: 0;
+ padding: 0;
+ border: 0;
  padding: 5px 10px;
  color: #000;
 }
-/* Style the header */
-header> .topHeader {
+header{
+    top: 0;
+    left: 0;
     width: 100%;
-    background-color: #f7fcfb;
-    height: 70px;    
+    height: 100vh;
+    background-color: #f7fcfb;  
+}
+/* Style the header */
+header> .topHeader {  
+    padding: 40vh 0vh calc(60vh - 40px - 75px);  
     text-align: center;
     text-transform: uppercase;
 }
 header> .downHeader {
+    z-index: 1000;
     background: #f7fcfb;
     width: 100%;
+    height: 70px;
+    left: 0;
+    bottom: 0;
     display: block;
     text-transform: uppercase;
     color: #f1f1f1;    
-    border: solid rgb(111, 216, 248);
+    border: solid rgb(4, 15, 19);
     border-width: 2px 0px 2px 0px;
-    box-shadow: 3px 3px 10px #c7f2f3;
+    box-shadow: 5px 3px 10px #1d1e1f;
   }
   .downHeader> h3{
     display: inline-block;
-    padding-left: 6%; 
+    padding-left: 6%;
+    padding-top: 1em;
   }
   .downHeader > .header-menu {
     float: right;
@@ -40,7 +56,7 @@ header> .downHeader {
     padding: 1em;
     border-right: 1px solid #020101;
   }
-  .header-menu a:hover {background: #d7f2ff;}
+  .header-menu a:hover {background: #d8d5d5; cursor: pointer;}
   .header-menu li {
     display: inline;
   }
@@ -59,7 +75,8 @@ header> .downHeader {
   .sticky {
     position: fixed;
     top: 0;
-    width: 100%
+    margin-top: 0px;
+    width: 100%;
   }
   
   /* Add some top padding to the page content to prevent sudden quick movement (as the header gets a new position at the top of the page (position:fixed and top:0) */
@@ -67,18 +84,87 @@ header> .downHeader {
     padding-top: 152px;
   }
 /*main styles*/
-.card{
-    border: 1px solid;
-    width: 20%;
-    height: auto;
+main {    
+    width: 100%;
+}
+.cards{
+    width: 100%;    
+    height: 100vh;
+    background-color: #e2e6f300;
+    display: block;
+    text-align: center;       
 }
 
+label {
+    transform-style: preserve-3d;
+    display: inline-block;
+    width: 25%;
+    height: 30%;
+    min-height: 200px;
+    max-height: 300px;
+    cursor: pointer;    
+    padding: 35vh 1vh;
+}
 
+.card {
+    position: relative;
+    display: inline-block;
+    height: 100%;
+    width: 100%;
+    transform-style: preserve-3d;
+    transition: all 600ms;
+    z-index: 20;        
+    text-align: center;
+}
 
+.card div {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background: #ffffff;
+    border: 1px solid #000000;
+    text-align: center;
+    backface-visibility: hidden;
+}
+    .front h2 {
+        top: 50%;       
+        position: absolute;                  
+        transform: translate(0, -50%);
+    }
 
+    .card .back {
+        background: #eceff1;
+        transform: rotateX(180deg);
+        position: relative; 
+        border: 1px solid #000000;
+    }
+    .back h3 {
+        top: 50%;       
+        position: absolute;
+        transform: translate(0, -50%);
+        color: rgb(0, 0, 0);
+    }
+
+label:hover .card {
+    transform: rotateX(20deg);
+    box-shadow: 0 20px 20px rgba(50,50,50,.2);
+}
+
+input {
+    display: none;
+}
+
+:checked + .card {
+    transform: rotateX(180deg);
+}
+
+label:hover :checked + .card {
+    transform: rotateX(160deg);
+    box-shadow: 0 20px 20px rgba(255,255,255,.2);
+}
   /*footer styles*/
 footer {    
-    position: fixed;
+    position: relative;
     bottom: 0;
     left: 0;
     background-image: url("../images/footer.jpg");
