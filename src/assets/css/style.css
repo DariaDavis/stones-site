@@ -46,7 +46,7 @@ header> .downHeader {
   .downHeader> h3{
     display: inline-block;
     padding-left: 6%;
-    padding-top: 1em;
+    padding-top: 25px;
   }
   .downHeader > .header-menu {
     float: right;
